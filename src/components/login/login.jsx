@@ -23,9 +23,6 @@ const Login = ({ authService }) => {
             user && goToMaker(user.uid)
         })
     });
-    // const handleLogoout = event => {
-
-    // }
     return (
         <section className={styles.login}>
             <Header />
