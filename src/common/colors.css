@@ -12,8 +12,8 @@
 
 @value makerPink: pink;
 
-@value makerShadow: rgba(217, 217, 217, 1);
+@value makerShadow: rgba(217, 217, 217, 0.5);
 
-@value makerColorful: linear-gradient(166deg, rgba(237, 193, 211, 1) 0%,rgba(212, 149, 161, 1) 60%, rgba(162, 63, 63, 1) 100%, rgba(127, 188, 242, 1) 100%);
+@value makerColorful: linear-gradient(135deg, rgba(109,106,173,1) 0%, rgba(146,146,236,1) 35%, rgba(129,185,196,1) 100%);
 
 @value makerWheat: wheat;
