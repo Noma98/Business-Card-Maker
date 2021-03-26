@@ -5,8 +5,6 @@ import styles from './card_edit_form.module.css';
 const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
     const { name, company, title, email, message, theme, fileName, fileURL } = card;
     const onChange = (event) => {
-        console.log(event.target);
-        console.log(event.currentTarget);
         if (event.target == null) {
             return;
         }
@@ -18,6 +16,13 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
     };
     const onsubmit = () => {
         deleteCard(card);
+    };
+    const onFileChange = file => {
+        updateCard({
+            ...card,
+            fileName: file.name,
+            fileURL: file.url,
+        })
     };
     return (
         <form className={styles.form}>
@@ -66,7 +71,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 onChange={onChange}
             ></textarea>
             <div className={styles.fileInput}>
-                <FileInput />
+                <FileInput name={fileName} onFileChange={onFileChange} />
             </div>
             <Button name='Delete' onClick={onsubmit} />
         </form>
