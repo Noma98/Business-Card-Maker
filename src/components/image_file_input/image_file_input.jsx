@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './image_file_input.module.css';
 const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
+    const [loading, setLoading] = useState(false);
     const inputRef = useRef();
     const onBtnClick = (event) => {
         event.preventDefault();
@@ -12,8 +13,9 @@ const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
     // };
     const onChange = async event => {
         //위에 처럼 then then..해서 써도 되고 아래처럼 async 써서 비동기적으로 해도 됨
-        imageUploader.upload(event.target.files[0]).then(console.log);
+        setLoading(true);
         const uploaded = await imageUploader.upload(event.target.files[0]);//이것이 다 될 때까지 기다렸다가 uploaded에 할당!
+        setLoading(false);
         onFileChange({
             name: uploaded.original_filename,
             url: uploaded.url
@@ -28,9 +30,10 @@ const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
             name="file"
             onChange={onChange}
         />
-        <button className={styles.btn} onClick={onBtnClick}>
+        {!loading && <button className={`${styles.btn} ${name ? styles.pink : styles.gray}`} onClick={onBtnClick}>
             {name || 'No file'}
-        </button>
+        </button>}
+        {loading && <div className={styles.loading}></div>}
     </div>;
 };
 
