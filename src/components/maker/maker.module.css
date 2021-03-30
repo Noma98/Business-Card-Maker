@@ -9,6 +9,7 @@
     background-color: makerWhite;
 }
 .container{
+    overflow-y: hidden;
     display: flex;
     flex:1; 
     /* flex:1 = flex:1 1 0 */
@@ -20,6 +21,7 @@
 @media screen and (max-width:mediaQuery){
 .container{
     flex-direction: column;
+    overflow-y: scroll;
 }
 }
 

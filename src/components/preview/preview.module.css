@@ -1,7 +1,9 @@
 @value makerGreen from '../../common/colors.css';
-
+@value mediaQuery from '../../common/size.css';
 .preview{
     flex-basis: 50%;
+    overflow-y: scroll;
+    padding: 0.5em 2em;
 }
 .title{
     text-align: center;
@@ -9,11 +11,16 @@
     color:makerGreen;
 }
 .cards{
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height:100%;
-    padding: 0.5em 2em;
+    padding: 0;
+    margin: 0;
+}
+@media screen and (max-width:mediaQuery){
+    .preview{
+        overflow-y:visible;
+    }
 }

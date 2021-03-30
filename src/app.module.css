@@ -1,13 +1,14 @@
-@value makerGray from  './common/colors.css';
+@value makerGray,makerShadow from  './common/colors.css';
 
 *{
     box-sizing: border-box;
 }
 .app{
-    width: 100%;
+    width: 80%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: makerGray;
+    margin: auto;
+    box-shadow:0px 0px 40px 9px makerGray;
 }
