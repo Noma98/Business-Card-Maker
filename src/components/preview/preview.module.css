@@ -2,7 +2,7 @@
 @value mediaQuery from '../../common/size.css';
 .preview{
     flex-basis: 50%;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 0.5em 2em;
 }
 .title{

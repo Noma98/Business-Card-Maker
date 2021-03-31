@@ -1,7 +1,7 @@
 @value makerGreen,makerLightGray from '../../common/colors.css';
 @value mediaQuery from '../../common/size.css';
 .editor{
-    overflow-y: scroll;
+    overflow-y: auto;
     flex-basis: 50%;
     border-right: 1px solid makerLightGray;
     padding: 0.5em 2em;

@@ -6,53 +6,37 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({ FileInput, authService }) => {
+const Maker = ({ FileInput, authService, cardRepository }) => {
     const history = useHistory();
-    const [cards, setCards] = useState({
-        '1': {
-            id: '1',
-            name: 'Ellie',
-            company: 'Samsung',
-            theme: 'dark',
-            title: 'Software Engineer',
-            email: 'ellie@gmail.com',
-            message: 'go for it',
-            fileName: 'ellie',
-            fileURL: 'ellie.png'
-        },
-        '2': {
-            id: '2',
-            name: 'Ellie',
-            company: 'Samsung',
-            theme: 'light',
-            title: 'Software Engineer',
-            email: 'ellie@gmail.com',
-            message: 'go for it',
-            fileName: 'ellie',
-            fileURL: 'ellie.png'
-        },
-        '3': {
-            id: '3',
-            name: 'Ellie',
-            company: 'Samsung',
-            theme: 'colorful',
-            title: 'Software Engineer',
-            email: 'ellie@gmail.com',
-            message: 'go for it',
-            fileName: 'ellie',
-            fileURL: null,
-        }
-    });
-
+    const historyState = history?.location?.state;
+    const [cards, setCards] = useState({});
+    const [userId, setUserId] = useState(historyState && historyState.id);
+    //historyState는 login과 같은 컴포넌트를 통해서 왔다면 값이 있을 거고, 다른 데서 왔으면 없을 수도 있음
     const onLogout = () => {
         authService.logout();
     };
+    //useEffect의 좋은점: 해당하는 로직별로 여러개 만들 수 있음
+    useEffect(() => {
+        if (!userId) {
+            return;
+        }
+        const stopSync = cardRepository.syncCard(userId, value => {
+            setCards(value);
+        });
+        return () => stopSync();
+    }, [userId]);
     useEffect(() => {
         authService.onAuthChange(user => {
-            if (!user) {
+            // if (!user) {
+            //     history.push('/');
+            // }
+            if (user) {
+                setUserId(user.uid);
+            } else {
                 history.push('/');
             }
         });
+
     });
     const createOrUpdateCard = card => {
         setCards(cards => {
@@ -60,6 +44,7 @@ const Maker = ({ FileInput, authService }) => {
             updated[card.id] = card;
             return updated;
         });
+        cardRepository.saveCard(userId, card);
     };
     const deleteCard = card => {
         setCards(cards => {
@@ -67,6 +52,7 @@ const Maker = ({ FileInput, authService }) => {
             delete updated[card.id];
             return updated;
         });
+        cardRepository.removeCard(userId, card);
     };
     return (
         <section className={styles.maker}>

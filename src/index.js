@@ -5,8 +5,10 @@ import App from './app';
 import AuthService from './service/auth_service';
 import ImageUploader from './service/image_uploader';
 import ImageFileInput from './components/image_file_input/image_file_input';
+import CardRepository from './service/card_repository';
 
 const authService = new AuthService();
+const cardRepository = new CardRepository();
 const imageUploader = new ImageUploader();
 
 //컴포넌트인 props는 보통 대문자로 시작하며 전달시 맨앞에 쓰자.(key있으면 그 다음)
@@ -22,7 +24,7 @@ const FileInput = props => (
 //const FileInput=<ImageFileInput imageUpLoader={imageUploader} />  ->다른 prop을 전달할 수 없게됨
 ReactDOM.render(
   <React.StrictMode>
-    <App authService={authService} FileInput={FileInput} />
+    <App authService={authService} FileInput={FileInput} cardRepository={cardRepository} />
   </React.StrictMode>,
   document.getElementById('root')
 );

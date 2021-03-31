@@ -1,12 +1,14 @@
-@value makerWhite from '../../common/colors.css';
+@value makerWhite,makerGray from '../../common/colors.css';
 @value mediaQuery from '../../common/size.css';
 
 .maker{
     width:100%;
     height:100%;
+    max-width: 55rem;
     display: flex;
     flex-direction: column;
     background-color: makerWhite;
+    box-shadow:0px 0px 40px 9px makerGray;
 }
 .container{
     overflow-y: hidden;
@@ -21,7 +23,7 @@
 @media screen and (max-width:mediaQuery){
 .container{
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 }
 
