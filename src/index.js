@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ReactDOM from 'react-dom';
 import './index.module.css';
 import App from './app';
@@ -12,9 +12,9 @@ const cardRepository = new CardRepository();
 const imageUploader = new ImageUploader();
 
 //컴포넌트인 props는 보통 대문자로 시작하며 전달시 맨앞에 쓰자.(key있으면 그 다음)
-const FileInput = props => (
+const FileInput = memo(props => (
   <ImageFileInput {...props} imageUploader={imageUploader} />
-);
+));
 //이렇게 하면 조금더 확장 가능한 컴포넌트가 된다. 다양한 서비스를 prop으로 말단에 있는 ImageFileInput 컴포넌트에 전달하려면 계속 여러가지 prop을 여기서 부터 전달해 내려가야 하기 때문에 FileInput이라는 것을 만들어서 props들을 받아서 ImageFileInput을 만들어 한번에 전달해 내려간다. 
 //필수적으로 필요한 prop은 작성해서 명시하고, 나머지는 props으로 전달해주자.
 

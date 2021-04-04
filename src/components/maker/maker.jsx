@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
@@ -12,9 +12,9 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     const [cards, setCards] = useState({});
     const [userId, setUserId] = useState(historyState && historyState.id);
     //historyState는 login과 같은 컴포넌트를 통해서 왔다면 값이 있을 거고, 다른 데서 왔으면 없을 수도 있음
-    const onLogout = () => {
+    const onLogout = useCallback(() => {
         authService.logout();
-    };
+    }, [authService]);
     //useEffect의 좋은점: 해당하는 로직별로 여러개 만들 수 있음
     useEffect(() => {
         if (!userId) {
