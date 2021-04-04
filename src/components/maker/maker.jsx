@@ -22,22 +22,18 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
         }
         const stopSync = cardRepository.syncCard(userId, value => {
             setCards(value);
-        });
+        });//함수를 호출하고 그 리턴값을 stopSync에 할당
         return () => stopSync();
-    }, [userId]);
+    }, [userId, cardRepository]);
     useEffect(() => {
         authService.onAuthChange(user => {
-            // if (!user) {
-            //     history.push('/');
-            // }
             if (user) {
                 setUserId(user.uid);
             } else {
                 history.push('/');
             }
         });
-
-    });
+    }, [authService, history]);
     const createOrUpdateCard = card => {
         setCards(cards => {
             const updated = { ...cards };
