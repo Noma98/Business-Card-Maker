@@ -1,19 +1,21 @@
-@value makerBlack: black;
-
-@value makerWhite: white;
-
-@value makerLightGray: #e8e7e6;
-
-@value makerLightPink: #ffeae8;
-
-@value makerGray: #626262;
-
-@value makerGreen: #385461;
-
-@value makerPink: pink;
-
-@value makerShadow: rgba(217, 217, 217, 0.5);
-
-@value makerColorful: linear-gradient(135deg, rgba(109,106,173,1) 0%, rgba(146,146,236,1) 35%, rgba(129,185,196,1) 100%);
-
+@value makerBlack: rgb(61, 61, 61);
+@value makerWhite: rgb(245, 245, 245);
+@value makerPaleGray: rgb(228, 230, 231);
+@value makerLightGray: lightgrey;
+@value makerMiddleGray: rgb(122, 122, 122);
+@value makerGray: rgb(191, 198, 204);
+@value makerBlue: rgb(59, 110, 168);
+@value makerDarkBlue: rgb(49, 90, 136);
+@value makerPurple: rgb(159, 90, 190);
 @value makerWheat: wheat;
+
+@value makerShadow: rgba(168, 167, 167, 0.5);
+
+@value makerLight: rgba(255, 255, 255, 0.644);
+@value makerDark: rgba(24, 35, 41, 0.466);
+@value makerColored: rgba(143, 68, 172, 0.767);
+
+
+.colorPicker{
+    color:rgb(61, 61, 61);
+}

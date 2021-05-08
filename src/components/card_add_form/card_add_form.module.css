@@ -1,28 +1,35 @@
-@value makerBlack,makerWhite from '../../common/colors.css';
+@value makerWhite, makerLightGray from '../../common/colors.css';
 
 .form{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    border-top: 1px solid makerBlack;
-    border-left: 1px solid makerBlack;
+    border-top: 1px solid makerLightGray;
+    border-left: 1px solid makerLightGray;
     margin-bottom: 1em;
 }
-.input,.textarea,.select,.button,.fileInput{
+.input,.textarea,.select,.button,.file{
     font-size: 0.8rem;
     width: 100%;
     border:0;
     padding:0.5em;
-    border-bottom: 1px solid makerBlack;
-    border-right: 1px solid makerBlack;
+    border-bottom: 1px solid makerLightGray;
+    border-right: 1px solid makerLightGray;
     background:makerWhite;
 }
 .input,.select{
     flex: 1 1 30%;
 }
-.fileInput{
+.file{
     padding: 0;
+    display: flex;
     flex: 1 1 50%;
+}
+.return,.gallery{
+    padding: 1em;
+}
+.return:hover,.gallery:hover{
+    background-color: makerPaleGray;
 }
 .input:focus,
 .textarea:focus,

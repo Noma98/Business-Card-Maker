@@ -1,28 +1,30 @@
-@value makerGreen, makerBlack, makerWhite from '../../common/colors.css';
-
+@value makerBlue, makerWhite from '../../common/colors.css';
 .header{
     width:100%;
     text-align: center;
-    padding:0.5em;
-    background-color: makerGreen;
+    padding:0.7em;
+    background-color: makerWhite;
     position:relative;
 }
 .logo{
     width:3em;
 }
 .title{
+    font-family: 'Lobster', cursive;
     margin:0;
-    color:makerWhite;
+    color:makerBlue;
 }
 .logout{
     position: absolute;
     right:3em;
     top:1em;
-    padding:0.8em;
+    padding:0.8em 1.5em;
+    letter-spacing: 1.3px;
     border-radius: 1rem;
-    background-color: makerBlack;
+    background-color: makerBlue;
     outline:0;
     border:0;
     cursor:pointer;
     color:makerWhite;
+    font-weight: bold;
 }

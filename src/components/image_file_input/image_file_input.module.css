@@ -1,4 +1,4 @@
-@value makerLightGray,makerPink,makerLightPink from '../../common/colors.css';
+@value makerPurple, makerPaleGray, makerMiddleGray,makerLightGray, makerGray from '../../common/colors.css';
 
 .container{
     width: 100%;
@@ -11,16 +11,20 @@
     width: 100%;
     height: 100%;
     font-weight: bold;
+    letter-spacing: 0.7px;
     font-size: 0.8rem;
     outline: none;
     border:none;
     cursor: pointer;
 }
-.pink{
-    background-color: makerLightPink;
-}
+/* rgb(191, 198, 204) */
 .gray{
-    background-color: makerLightGray;
+    background-color: makerGray;
+}
+/* rgb(224, 223, 223) */
+.lightGray{
+    background-color: makerPaleGray;
+    color:makerMiddleGray;
 }
 .input{
     display: none;
@@ -34,7 +38,7 @@
     height:1.5em;
     border-radius: 50%;
     border:3px solid makerLightGray;
-    border-top: 3px solid makerPink;
+    border-top: 3px solid makerPurple;
     animation: spin 2s linear infinite;
 }
 @keyframes spin {

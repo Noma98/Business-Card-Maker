@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import Footer from '../footer/footer';
-import Header from '../header/header';
 import styles from './login.module.css';
 
 const Login = ({ authService }) => {
@@ -24,21 +23,22 @@ const Login = ({ authService }) => {
         })
     });
     return (
-        <section className={styles.login}>
-            <Header />
-            <section>
-                <h1>Login</h1>
+        <div className={styles.background}>
+            <section className={styles.login}>
+                <h1 className={styles.title}>Login</h1>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <button className={styles.button} onClick={onLogin}>Google</button>
+                        <button className={styles.button} onClick={onLogin}><img className={styles.logo} src="images/google.png" alt="google" />Google</button>
                     </li>
                     <li className={styles.item} >
-                        <button className={styles.button} onClick={onLogin}>Github</button>
+
+                        <button className={styles.button} onClick={onLogin}>
+                            <img className={styles.logo} src="images/github.png" alt="github" />Github</button>
                     </li>
                 </ul>
+                <Footer />
             </section>
-            <Footer />
-        </section>
+        </div>
     );
 };
 

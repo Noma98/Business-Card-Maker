@@ -30,7 +30,7 @@ const ImageFileInput = memo(({ imageUploader, name, onFileChange }) => {
             name="file"
             onChange={onChange}
         />
-        {!loading && <button className={`${styles.btn} ${name ? styles.pink : styles.gray}`} onClick={onBtnClick}>
+        {!loading && <button className={`${styles.btn} ${name ? styles.gray : styles.lightGray}`} onClick={onBtnClick}>
             {name || 'No file'}
         </button>}
         {loading && <div className={styles.loading}></div>}

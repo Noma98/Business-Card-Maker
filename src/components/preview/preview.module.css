@@ -1,4 +1,4 @@
-@value makerGreen from '../../common/colors.css';
+@value makerDarkBlue from '../../common/colors.css';
 @value mediaQuery from '../../common/size.css';
 .preview{
     flex-basis: 50%;
@@ -6,9 +6,10 @@
     padding: 0.5em 2em;
 }
 .title{
+    font-family: 'Pangolin', cursive;
     text-align: center;
     margin-bottom: 1em;
-    color:makerGreen;
+    color:makerDarkBlue;
 }
 .cards{
     display: flex;

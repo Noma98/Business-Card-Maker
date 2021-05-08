@@ -1,13 +1,16 @@
-@value makerWhite, makerGreen from '../../common/colors.css';
+@value makerWhite, makerBlue from '../../common/colors.css';
 
 .footer{
     width:100%;
     text-align: center;
-    background-color: makerGreen;
+    background-color: makerBlue;
+    border-radius:0 0 10px 10px ;
 }
 
 .title{
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
     color: makerWhite;
     margin: 0;
-    padding: 1em;
+    padding: 0.2em;
 }

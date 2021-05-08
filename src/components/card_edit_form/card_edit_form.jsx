@@ -3,7 +3,7 @@ import Button from '../button/button';
 import styles from './card_edit_form.module.css';
 
 const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
-    const { name, company, title, email, message, theme, fileName, fileURL } = card;
+    const { name, company, phone, email, message, theme, fileName } = card;
     const onChange = (event) => {
         if (event.target == null) {
             return;
@@ -20,8 +20,16 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
     const onFileChange = file => {
         updateCard({
             ...card,
-            fileName: file.name,
+            fileName: '✔ uploaded',
             fileURL: file.url,
+        })
+    };
+    const setDefault = (e) => {
+        e.preventDefault();
+        updateCard({
+            ...card,
+            fileName: '',
+            fileURL: '',
         })
     };
     return (
@@ -32,6 +40,8 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 name="name"
                 value={name}
                 onChange={onChange}
+                placeholder="Name"
+                autocomplete="off"
             />
             <input
                 className={styles.input}
@@ -39,6 +49,8 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 name="company"
                 value={company}
                 onChange={onChange}
+                placeholder="Company"
+                autocomplete="off"
             />
             <select
                 className={styles.select}
@@ -53,9 +65,11 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
             <input
                 className={styles.input}
                 type="text"
-                name="title"
-                value={title}
+                name="phone"
+                value={phone}
                 onChange={onChange}
+                placeholder="Phone Number"
+                autocomplete="off"
             />
             <input
                 className={styles.input}
@@ -63,6 +77,8 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 name="email"
                 value={email}
                 onChange={onChange}
+                placeholder="E-mail"
+                autocomplete="off"
             />
             <textarea
                 className={styles.textarea}
@@ -70,11 +86,20 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 value={message}
                 onChange={onChange}
             ></textarea>
-            <div className={styles.fileInput}>
+            <div className={styles.file}>
                 <FileInput name={fileName} onFileChange={onFileChange} />
+                <button
+                    className={styles.return}
+                    onClick={setDefault}
+                >
+                    <i class="fas fa-undo-alt"></i>
+                </button>
+                <button className={styles.gallery}>
+                    <i class="fas fa-images"></i>
+                </button>
             </div>
             <Button name='Delete' onClick={onsubmit} />
-        </form>
+        </form >
     );
 };
 

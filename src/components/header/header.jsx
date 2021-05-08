@@ -7,8 +7,7 @@ const Header = memo(({ onLogout }) => (
             <button className={styles.logout} onClick={onLogout}>
                 Logout
             </button>)}
-        <img src="/images/logo.png" alt="logo" className={styles.logo} />
-        <h1 className={styles.title}>Business Card Maker</h1>
+        <h1 className={styles.title}>Trello</h1>
     </header>
 ));
 

@@ -7,17 +7,24 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
     const nameRef = useRef();
     const companyRef = useRef();
     const themeRef = useRef();
-    const titleRef = useRef();
+    const phoneRef = useRef();
     const emailRef = useRef();
     const messageRef = useRef();
     const [file, setFile] = useState({ fileName: null, fileURL: null });
 
     const onFileChange = file => {
         setFile({
-            fileName: file.name,
+            fileName: '✔ Uploaded',
             fileURL: file.url,
         });
     }
+    const setDefault = (e) => {
+        e.preventDefault();
+        setFile({
+            fileName: '',
+            fileURL: '',
+        })
+    };
     const onSubmit = (event) => {
         event.preventDefault();
         const card = {
@@ -25,7 +32,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
             name: nameRef.current.value || '',
             company: companyRef.current.value || '',
             theme: themeRef.current.value,
-            title: titleRef.current.value || '',
+            phone: phoneRef.current.value || '',
             email: emailRef.current.value || '',
             message: messageRef.current.value || '',
             fileName: file.fileName || '',
@@ -38,18 +45,61 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
 
     return (
         <form ref={formRef} className={styles.form}>
-            <input ref={nameRef} className={styles.input} type="text" name="name" placeholder="Name" />
-            <input ref={companyRef} className={styles.input} type="text" name="company" placeholder="Company" />
+            <input
+                ref={nameRef}
+                className={styles.input}
+                type="text"
+                name="name"
+                placeholder="Name"
+                autocomplete="off"
+            />
+            <input
+                ref={companyRef}
+                className={styles.input}
+                type="text"
+                name="company"
+                placeholder="Company"
+                autocomplete="off"
+            />
             <select ref={themeRef} className={styles.select} name="theme" placeholder="Theme">
                 <option>light</option>
                 <option>dark</option>
                 <option>colorful</option>
             </select>
-            <input ref={titleRef} className={styles.input} type="text" name="title" placeholder="Title" />
-            <input ref={emailRef} className={styles.input} type="text" name="email" placeholder="E-mail" />
-            <textarea ref={messageRef} className={styles.textarea} name="message" placeholder="Message"></textarea>
-            <div className={styles.fileInput}>
+            <input
+                ref={phoneRef}
+                className={styles.input}
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                autocomplete="off"
+            />
+            <input
+                ref={emailRef}
+                className={styles.input}
+                type="text"
+                name="email"
+                placeholder="E-mail"
+                autocomplete="off"
+            />
+            <textarea
+                ref={messageRef}
+                className={styles.textarea}
+                name="message"
+                placeholder="Message"
+            >
+            </textarea>
+            <div className={styles.file}>
                 <FileInput name={file.fileName} onFileChange={onFileChange} />
+                <button
+                    className={styles.return}
+                    onClick={setDefault}
+                >
+                    <i class="fas fa-undo-alt"></i>
+                </button>
+                <button className={styles.gallery}>
+                    <i class="fas fa-images"></i>
+                </button>
             </div>
             <Button name='Add' onClick={onSubmit} />
         </form>

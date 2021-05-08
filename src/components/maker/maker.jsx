@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import Editor from '../editor/editor';
-import Footer from '../footer/footer';
 import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
@@ -9,7 +8,30 @@ import styles from './maker.module.css';
 const Maker = ({ FileInput, authService, cardRepository }) => {
     const history = useHistory();
     const historyState = history?.location?.state;
-    const [cards, setCards] = useState({});
+    const [cards, setCards] = useState({
+        '1': {
+            company: "unknown",
+            email: "cheezecake@gmail.com",
+            id: '1',
+            message: "this person is so dangerous.... ",
+            name: "Merry 👾",
+            phone: "010-1111-2501",
+            theme: "colorful",
+            fileName: "",
+            fileURL: "",
+        },
+        '2': {
+            company: "unknown",
+            email: "ellie1004@gmail.com",
+            id: '2',
+            message: "She is engel...i love her.. ",
+            name: "Ellie 🌞",
+            phone: "010-1004-1004",
+            theme: "light",
+            fileName: "",
+            fileURL: "",
+        }
+    });
     const [userId, setUserId] = useState(historyState && historyState.id);
     //historyState는 login과 같은 컴포넌트를 통해서 왔다면 값이 있을 거고, 다른 데서 왔으면 없을 수도 있음
     const onLogout = useCallback(() => {
@@ -59,10 +81,10 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
                     cards={cards}
                     addCard={createOrUpdateCard}
                     updateCard={createOrUpdateCard}
-                    deleteCard={deleteCard} />
+                    deleteCard={deleteCard}
+                />
                 <Preview cards={cards} />
             </div>
-            <Footer />
         </section>
     )
 };
