@@ -1,0 +1,78 @@
+@value makerWhite,makerBlue,makerShadow from '../../common/colors.css';
+
+.avatarPicker{
+    background-color: lightgray;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.avatar{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin:0.5em;
+}
+.avatarBox{
+    padding: 1em;
+    border-radius: 1em;
+    background-color: makerWhite;
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 20px 8px makerShadow;
+}
+.palette{
+    display: flex;
+    align-items: center;
+
+}
+
+.palette div{
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+.white{
+    background-color: white;
+}
+.sky{
+    background-color: rgb(135, 167, 235);
+}
+.gray{
+    background-color: rgb(114, 120, 129);
+}
+.orange{
+    background-color: rgb(206, 128, 38);
+}
+.green{
+    background-color: rgb(141, 202, 50);
+}
+.pink{
+    background-color: rgb(224, 165, 175);
+}
+.complete{
+    padding:1em 2em;
+    border-radius: 1em;
+    background-color: makerWhite;
+    font-weight: bold;
+    margin-left: 1em;
+    letter-spacing: 2px;
+}
+.back{
+    color:makerBlue;
+    background-color: transparent;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-left: 0.5em;
+}

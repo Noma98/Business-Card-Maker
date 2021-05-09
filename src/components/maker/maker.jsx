@@ -7,7 +7,7 @@ import styles from './maker.module.css';
 
 const Maker = ({ FileInput, authService, cardRepository }) => {
     const history = useHistory();
-    const historyState = history?.location?.state;
+    const historyState = history.location.state;
     const [cards, setCards] = useState({
         '1': {
             company: "unknown",
@@ -34,6 +34,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     });
     const [userId, setUserId] = useState(historyState && historyState.id);
     //historyState는 login과 같은 컴포넌트를 통해서 왔다면 값이 있을 거고, 다른 데서 왔으면 없을 수도 있음
+
     const onLogout = useCallback(() => {
         authService.logout();
     }, [authService]);
@@ -72,6 +73,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
         });
         cardRepository.removeCard(userId, card);
     };
+
     return (
         <section className={styles.maker}>
             <Header onLogout={onLogout} />

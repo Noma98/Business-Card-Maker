@@ -2,7 +2,7 @@ import React, { memo, useRef, useState } from 'react';
 import Button from '../button/button';
 import styles from './card_add_form.module.css';
 
-const CardAddForm = memo(({ FileInput, onAdd }) => {
+const CardAddForm = memo(({ FileInput, onAdd, onChangeAvatar }) => {
     const formRef = useRef();
     const nameRef = useRef();
     const companyRef = useRef();
@@ -51,7 +51,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 type="text"
                 name="name"
                 placeholder="Name"
-                autocomplete="off"
+                autoComplete="off"
             />
             <input
                 ref={companyRef}
@@ -59,7 +59,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 type="text"
                 name="company"
                 placeholder="Company"
-                autocomplete="off"
+                autoComplete="off"
             />
             <select ref={themeRef} className={styles.select} name="theme" placeholder="Theme">
                 <option>light</option>
@@ -72,7 +72,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 type="text"
                 name="phone"
                 placeholder="Phone Number"
-                autocomplete="off"
+                autoComplete="off"
             />
             <input
                 ref={emailRef}
@@ -80,7 +80,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                 type="text"
                 name="email"
                 placeholder="E-mail"
-                autocomplete="off"
+                autoComplete="off"
             />
             <textarea
                 ref={messageRef}
