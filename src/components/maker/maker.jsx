@@ -19,6 +19,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
             theme: "colorful",
             fileName: "",
             fileURL: "",
+            color: "white",
         },
         '2': {
             company: "unknown",
@@ -30,6 +31,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
             theme: "light",
             fileName: "",
             fileURL: "",
+            color: "white",
         }
     });
     const [userId, setUserId] = useState(historyState && historyState.id);

@@ -4,7 +4,7 @@ import ImgBox from '../img_box/img_box';
 import styles from './card_edit_form.module.css';
 
 const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
-    const { name, company, phone, email, message, theme, fileName } = card;
+    const { name, company, phone, email, message, theme, fileName, color } = card;
     const [avatar, setAvatar] = useState(false);
 
     const onChange = (event) => {
@@ -43,8 +43,9 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
         setAvatar(boolean || !avatar);
         avatarObject && updateCard({
             ...card,
-            fileName: '✔ uploaded',
-            fileURL: avatarObject.src
+            fileName: '',
+            fileURL: avatarObject.src,
+            color: avatarObject.color,
         })
     }
     return (

@@ -23,11 +23,9 @@
 }
 
 .avatar{
-    width:10rem;
-    height:10rem;
-    padding: 1em;
-    margin-left: 0.5em;
-    margin-right: 1em;
+    width:9rem;
+    height:9rem;
+    margin: 0.5em 1.5em 0.5em 1em;
     border-radius: 50%;
 }
 .info{
@@ -51,4 +49,22 @@
     width:85%;
     background-color:makerWheat;
     transform: translateY(0.5em);
+}
+.white{
+    background-color: white;
+}
+.sky{
+    background-color: rgb(133, 165, 202);
+}
+.gray{
+    background-color: rgb(144, 146, 150);
+}
+.orange{
+    background-color: rgb(255, 163, 57);
+}
+.green{
+    background-color: rgb(155, 161, 59);
+}
+.pink{
+    background-color: rgb(233, 146, 160);
 }

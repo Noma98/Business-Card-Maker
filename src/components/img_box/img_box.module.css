@@ -20,6 +20,10 @@
     cursor: pointer;
     margin:0.5em;
 }
+.selected{
+    border: 2px solid white;
+    box-shadow:6px 6px 8px 0px makerShadow;
+}
 .avatarBox{
     padding: 1em;
     border-radius: 1em;
@@ -47,19 +51,19 @@
     background-color: white;
 }
 .sky{
-    background-color: rgb(135, 167, 235);
+    background-color: rgb(133, 165, 202);
 }
 .gray{
-    background-color: rgb(114, 120, 129);
+    background-color: rgb(144, 146, 150);
 }
 .orange{
-    background-color: rgb(206, 128, 38);
+    background-color: rgb(255, 163, 57);
 }
 .green{
-    background-color: rgb(141, 202, 50);
+    background-color: rgb(155, 161, 59);
 }
 .pink{
-    background-color: rgb(224, 165, 175);
+    background-color: rgb(233, 146, 160);
 }
 .complete{
     padding:1em 2em;

@@ -3,19 +3,59 @@ import styles from './img_box.module.css';
 
 const ImgBox = ({ onChangeAvatar }) => {
     const [avatar, setAvatar] = useState({
-        src: '',
+        src: null,
         color: 'white',
+        prevSelect: '',
+        select: {
+            '1': '',
+            '2': '',
+            '3': '',
+            '4': '',
+            '5': '',
+            '6': '',
+            '7': '',
+            '8': '',
+        }
     });
     const chooseAvatar = (e) => {
-        setAvatar({
-            ...avatar,
-            src: e.target.src,
-        })
+        if (avatar.prevSelect === e.target.id) {
+            setAvatar({
+                ...avatar,
+                src: null,
+                prevSelect: '',
+                select: {
+                    ...avatar.select,
+                    [e.target.id]: '',
+                }
+            })
+        } else if (!avatar.prevSelect) {
+            setAvatar({
+                ...avatar,
+                src: e.target.src,
+                prevSelect: e.target.id,
+                select: {
+                    ...avatar.select,
+                    [e.target.id]: styles.selected,
+                }
+            })
+        } else {
+            setAvatar({
+                ...avatar,
+                src: e.target.src,
+                prevSelect: e.target.id,
+                select: {
+                    ...avatar.select,
+                    [avatar.prevSelect]: '',
+                    [e.target.id]: styles.selected,
+                }
+            })
+        }
     }
+
     const chooseColor = (e) => {
         setAvatar({
             ...avatar,
-            color: e.target.name
+            color: getColor(e.target.id)
         })
     }
     const goBack = () => {
@@ -24,26 +64,46 @@ const ImgBox = ({ onChangeAvatar }) => {
     return (
         <section className={styles.avatarPicker}>
             <div className={styles.avatarBox}>
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/1.png" alt="avatar" />
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/2.png" alt="avatar" />
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/3.png" alt="avatar" />
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/4.png" alt="avatar" />
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/5.png" alt="avatar" />
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/6.png" alt="avatar" />
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/7.png" alt="avatar" />
-                <img onClick={chooseAvatar} className={`${styles.avatar} ${avatar.color}`} src="images/8.png" alt="avatar" />
+                {Object.keys(avatar.select).map(key => {
+                    return <img
+                        key={key}
+                        id={key}
+                        className={`${styles.avatar} ${avatar.color} ${avatar.select[key] && avatar.select[key]}`}
+                        src={`images/${key}.png`}
+                        alt="avatar"
+                        onClick={chooseAvatar}
+                    />;
+                })}
             </div>
             <div className={styles.palette}>
-                <div name="sky" className={styles.sky} onClick={chooseColor}></div>
-                <div name="gray" className={styles.gray} onClick={chooseColor}></div>
-                <div name="orange" className={styles.orange} onClick={chooseColor}></div>
-                <div name="green" className={styles.green} onClick={chooseColor}></div>
-                <div name="pink" className={styles.pink} onClick={chooseColor}></div>
+                <div id="white" className={styles.white} onClick={chooseColor}></div>
+                <div id="gray" className={styles.gray} onClick={chooseColor}></div>
+                <div id="sky" className={styles.sky} onClick={chooseColor}></div>
+                <div id="orange" className={styles.orange} onClick={chooseColor}></div>
+                <div id="green" className={styles.green} onClick={chooseColor}></div>
+                <div id="pink" className={styles.pink} onClick={chooseColor}></div>
                 <button className={styles.complete} onClick={goBack}>Complete!</button>
                 <button className={styles.back} onClick={goBack}><i className="fas fa-arrow-circle-left"></i></button>
             </div>
         </section>
     );
 };
-
+function getColor(color) {
+    switch (color) {
+        case 'white':
+            return styles.white;
+        case 'sky':
+            return styles.sky;
+        case 'gray':
+            return styles.gray;
+        case 'orange':
+            return styles.orange;
+        case 'green':
+            return styles.green;
+        case 'pink':
+            return styles.pink;
+        default:
+            throw new Error(`unknown color: ${color}`);
+    }
+}
 export default ImgBox;
