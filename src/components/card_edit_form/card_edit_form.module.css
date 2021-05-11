@@ -2,11 +2,11 @@
 
 .form{
     display: flex;
-    width: 100%;
+    max-width: 30rem;
     flex-wrap: wrap;
     border-top: 1px solid makerLightGray;
     border-left: 1px solid makerLightGray;
-    margin-bottom: 1em;
+    margin: 1em auto;
 }
 .input,.textarea,.select,.button,.file{
     font-size: 0.8rem;

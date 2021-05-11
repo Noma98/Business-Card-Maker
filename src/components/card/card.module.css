@@ -4,7 +4,7 @@
     align-items: center;
     margin-bottom: 0.5em;
     border-radius: 1em;
-    padding: 0.2em 0;
+    padding: 0.5em 0;
     box-shadow:6px 6px 8px 0px makerShadow;
     max-width: 30rem;
     width: 100%;
@@ -23,8 +23,7 @@
 }
 
 .avatar{
-    width:9rem;
-    height:9rem;
+    width:35%;
     margin: 0.5em 1.5em 0.5em 1em;
     border-radius: 50%;
 }

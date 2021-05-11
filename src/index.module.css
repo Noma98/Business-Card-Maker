@@ -1,4 +1,4 @@
-
+@value mediaTablet, mediaMobile from './common/size.css';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,3 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@media screen and (max-width:mediaTablet){
+  html{
+      font-size: 18px;
+  }
+ }
+ @media screen and (max-width:mediaMobile){
+ html{
+     font-size: 15px;
+ }
+ }

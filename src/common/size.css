@@ -1,1 +1,3 @@
-@value mediaQuery: 50rem;
+@value mediaPC: 950px;
+@value mediaTablet: 800px;
+@value mediaMobile: 600px;

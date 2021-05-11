@@ -1,4 +1,6 @@
 @value makerBlue, makerWhite from '../../common/colors.css';
+@value mediaTablet from '../../common/size.css';
+
 .header{
     width:100%;
     text-align: center;
@@ -16,14 +18,13 @@
 }
 .logout{
     position: absolute;
+    font-size: 0.7rem;
     right:3em;
     top:1em;
     padding:0.8em 1.5em;
     letter-spacing: 1.3px;
     border-radius: 1rem;
     background-color: makerBlue;
-    outline:0;
-    border:0;
     cursor:pointer;
     color:makerWhite;
     font-weight: bold;

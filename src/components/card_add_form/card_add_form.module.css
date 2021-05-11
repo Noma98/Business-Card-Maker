@@ -1,12 +1,13 @@
 @value makerWhite, makerLightGray from '../../common/colors.css';
 
 .form{
+    max-width: 30rem;
+    margin: 1em auto;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     border-top: 1px solid makerLightGray;
     border-left: 1px solid makerLightGray;
-    margin-bottom: 1em;
 }
 .input,.textarea,.select,.button,.file{
     font-size: 0.8rem;

@@ -1,5 +1,5 @@
 @value makerWhite,makerGray from '../../common/colors.css';
-@value mediaQuery from '../../common/size.css';
+@value mediaPC from '../../common/size.css';
 
 .maker{
     width:100%;
@@ -22,16 +22,12 @@
     overflow-y: hidden;
     display: flex;
     flex:1; 
-    /* flex:1 = flex:1 1 0 */
-    /* flex-basis : 0;   ➜ The div does not have a starting value as such and will 
-                     take up screen as per the screen size available for
-                     e.g:- if 3 divs are in the wrapper then each div will take 33%. */
 }
 
-@media screen and (max-width:mediaQuery){
-.container{
-    flex-direction: column;
-    overflow-y: auto;
-}
+@media screen and (max-width:mediaPC){
+  .container{
+      flex-direction: column;
+      overflow-y: auto;
+  }
 }
 
