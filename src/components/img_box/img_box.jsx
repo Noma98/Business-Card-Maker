@@ -59,7 +59,7 @@ const ImgBox = ({ onChangeAvatar }) => {
         })
     }
     const goBack = () => {
-        onChangeAvatar(false, avatar);
+        onChangeAvatar(false, null);
     }
     return (
         <section className={styles.avatarPicker}>
@@ -82,8 +82,8 @@ const ImgBox = ({ onChangeAvatar }) => {
                 <div id="orange" className={styles.orange} onClick={chooseColor}></div>
                 <div id="green" className={styles.green} onClick={chooseColor}></div>
                 <div id="pink" className={styles.pink} onClick={chooseColor}></div>
-                <button className={styles.complete} onClick={goBack}>Complete!</button>
-                <button className={styles.back} onClick={goBack}><i className="fas fa-arrow-circle-left"></i></button>
+                <button className={styles.btn} onClick={goBack}>OK</button>
+                <button className={styles.btn} onClick={goBack}>Cancel</button>
             </div>
         </section>
     );

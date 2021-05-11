@@ -1,7 +1,7 @@
-@value makerWhite,makerBlue,makerShadow from '../../common/colors.css';
+@value makerWhite,makerBlue,makerLightBlue from '../../common/colors.css';
 
 .avatarPicker{
-    background-color: lightgray;
+    background-color: rgba(68, 68, 68, 0.774);
     position: absolute;
     top:0;
     left: 0;
@@ -19,10 +19,10 @@
     border-radius: 50%;
     cursor: pointer;
     margin:0.5em;
+    transition: all ease-in 150ms;
 }
-.selected{
-    border: 2px solid white;
-    box-shadow:6px 6px 8px 0px makerShadow;
+.avatar:hover,.selected{
+    box-shadow: 0px 0px 6px 4px rgb(153, 211, 245);
 }
 .avatarBox{
     padding: 1em;
@@ -33,7 +33,6 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    box-shadow: 0px 0px 20px 8px makerShadow;
 }
 .palette{
     display: flex;
@@ -42,16 +41,18 @@
 }
 
 .palette div{
-    width: 2rem;
-    height: 2rem;
-    margin: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0.5em;
     cursor: pointer;
+    border-radius: 50%;
 }
 .white{
     background-color: white;
+    
 }
 .sky{
-    background-color: rgb(133, 165, 202);
+    background-color: rgb(148, 185, 197);
 }
 .gray{
     background-color: rgb(144, 146, 150);
@@ -65,18 +66,18 @@
 .pink{
     background-color: rgb(233, 146, 160);
 }
-.complete{
-    padding:1em 2em;
-    border-radius: 1em;
-    background-color: makerWhite;
-    font-weight: bold;
-    margin-left: 1em;
-    letter-spacing: 2px;
+.btn:nth-of-type(1){
+    margin-left: 2em;
 }
-.back{
-    color:makerBlue;
-    background-color: transparent;
-    font-size: 2rem;
-    line-height: 2rem;
-    margin-left: 0.5em;
+.btn{
+    padding:0.5em 1.2em;
+    border-radius: 0.5em;
+    background-color: makerLightBlue;
+    margin: 0 0.5em;
+    color:makerWhite;
+    font-size: 1rem;
+    letter-spacing: 2.5px;
+}
+.btn:hover{
+    background-color: makerBlue;
 }
