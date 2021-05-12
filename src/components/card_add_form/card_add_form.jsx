@@ -124,10 +124,10 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
                     className={styles.return}
                     onClick={setDefault}
                 >
-                    <i class="fas fa-undo-alt"></i>
+                    <i className="fas fa-undo-alt"></i>
                 </button>
                 <button className={styles.gallery} onClick={onClickGallery}>
-                    <i class="fas fa-images"></i>
+                    <i className="fas fa-images"></i>
                 </button>
             </div>
             <Button name='Add' onClick={onSubmit} />

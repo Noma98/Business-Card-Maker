@@ -5,6 +5,9 @@ class AuthService {
         const authProvider = this.getProvider(providerName);
         return firebaseAuth.signInWithPopup(authProvider);
     }
+    loginAnonymously() {
+        return firebaseAuth.signInAnonymously();
+    }
     logout() {
         firebaseAuth.signOut();
     }
