@@ -22,10 +22,5 @@
     right:3em;
     top:1em;
     padding:0.8em 1.5em;
-    letter-spacing: 1.3px;
     border-radius: 1rem;
-    background-color: makerBlue;
-    cursor:pointer;
-    color:makerWhite;
-    font-weight: bold;
 }

@@ -1,5 +1,4 @@
-
-
+@value makerBlue,makerWhite from './common/colors.css';
 *{
     box-sizing: border-box;
     font-family: 'Pangolin', cursive;
@@ -21,5 +20,14 @@ button{
     border: none;
     cursor: pointer;
     outline:0;
+    font-weight: bold;
+    padding:0.5em;
+    font-size: 0.8rem;
     border:0;
+    letter-spacing:1.7px;
+    background-color: makerBlue;
+    color: makerWhite;
+}
+button:hover{
+    opacity:0.8;
 }

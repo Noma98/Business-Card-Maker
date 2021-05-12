@@ -48,10 +48,8 @@
     width:60%;
     height:2.5em;
     font-size:1.2rem;
-    cursor: pointer;
     border-radius: 1.2rem;
     box-shadow:6px 6px 8px 0px makerShadow;
-    outline:0;
     line-height: 2rem;
 }
 .button:hover{

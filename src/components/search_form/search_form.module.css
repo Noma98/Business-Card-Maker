@@ -1,0 +1,12 @@
+@value makerBlue, makerWhite from '../../common/colors.css';
+
+.search{
+    margin-bottom: 1em;
+    max-width: 30rem;
+    height: 2rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 0.5em;
+    font-size: 1rem;
+}

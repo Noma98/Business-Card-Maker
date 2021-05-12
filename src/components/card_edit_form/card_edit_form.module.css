@@ -1,4 +1,4 @@
-@value makerWhite,makerPaleGray,makerLightGray from '../../common/colors.css';
+@value makerWhite,makerBlack,makerPaleGray,makerLightGray from '../../common/colors.css';
 
 .form{
     display: flex;
@@ -16,6 +16,7 @@
     border-bottom: 1px solid makerLightGray;
     border-right: 1px solid makerLightGray;
     background:makerWhite;
+    outline:none;
 }
 .input,.select{
     flex: 1 1 30%;
@@ -27,15 +28,11 @@
 }
 .return,.gallery{
     padding: 1em;
+    color: makerBlack;
+    background-color: makerWhite;
 }
 .return:hover,.gallery:hover{
     background-color: makerPaleGray;
-}
-.input:focus,
-.textarea:focus,
-.select:focus,
-.button:focus{
-    outline:0;
 }
 .textarea{
     flex-basis:100%;
