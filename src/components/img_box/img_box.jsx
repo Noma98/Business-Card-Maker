@@ -58,6 +58,9 @@ const ImgBox = ({ onChangeAvatar }) => {
             color: getColor(e.target.id)
         })
     }
+    const returnValue = () => {
+        onChangeAvatar(false, avatar);
+    }
     const goBack = () => {
         onChangeAvatar(false, null);
     }
@@ -82,7 +85,7 @@ const ImgBox = ({ onChangeAvatar }) => {
                 <div id="orange" className={styles.orange} onClick={chooseColor}></div>
                 <div id="green" className={styles.green} onClick={chooseColor}></div>
                 <div id="pink" className={styles.pink} onClick={chooseColor}></div>
-                <button className={styles.btn} onClick={goBack}>OK</button>
+                <button className={styles.btn} onClick={returnValue}>OK</button>
                 <button className={styles.btn} onClick={goBack}>Cancel</button>
             </div>
         </section>
