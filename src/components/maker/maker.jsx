@@ -11,20 +11,18 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     const [cards, setCards] = useState({});
     const [userId, setUserId] = useState(historyState && historyState.id);
     //historyState는 login과 같은 컴포넌트를 통해서 왔다면 값이 있을 거고, 다른 데서 왔으면 없을 수도 있음
+    const [loading, setLoading] = useState(true);
 
-    const onLogout = useCallback(() => {
-        authService.logout();
-    }, [authService]);
-    //useEffect의 좋은점: 해당하는 로직별로 여러개 만들 수 있음
     useEffect(() => {
         if (!userId) {
             return;
         }
         const stopSync = cardRepository.syncCard(userId, value => {
             setCards(value);
-        });//함수를 호출하고 그 리턴값을 stopSync에 할당
+        });
         return () => stopSync();
     }, [userId, cardRepository]);
+
     useEffect(() => {
         authService.onAuthChange(user => {
             if (user) {
@@ -32,8 +30,14 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
             } else {
                 history.push('/');
             }
+            setLoading(false);
         });
     }, [authService, history]);
+
+    const onLogout = useCallback(() => {
+        authService.logout();
+    }, [authService]);
+
     const createOrUpdateCard = card => {
         setCards(cards => {
             const updated = { ...cards };
@@ -42,6 +46,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
         });
         cardRepository.saveCard(userId, card);
     };
+
     const deleteCard = card => {
         setCards(cards => {
             const updated = { ...cards };
@@ -53,17 +58,20 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
 
     return (
         <section className={styles.maker}>
-            <Header onLogout={onLogout} />
-            <div className={styles.container}>
-                <Editor
-                    FileInput={FileInput}
-                    cards={cards}
-                    addCard={createOrUpdateCard}
-                    updateCard={createOrUpdateCard}
-                    deleteCard={deleteCard}
-                />
-                <Preview cards={cards} />
-            </div>
+            {loading && <div className={styles.loadingContainer}><div className={styles.loading}></div></div>}
+            {!loading && <>
+                <Header onLogout={onLogout} />
+                <div className={styles.container}>
+                    <Editor
+                        FileInput={FileInput}
+                        cards={cards}
+                        addCard={createOrUpdateCard}
+                        updateCard={createOrUpdateCard}
+                        deleteCard={deleteCard}
+                    />
+                    <Preview cards={cards} />
+                </div>
+            </>}
         </section>
     )
 };
