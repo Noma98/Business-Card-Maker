@@ -1,7 +1,0 @@
-@value makerWhite, makerBlue from '../../common/colors.css';
-.button{
-    flex: 1 1 50%;
-}
-.button:hover{
-    opacity: 0.8;
-}

@@ -10,7 +10,7 @@ const Card = memo(({ card }) => {
             <img className={`${styles.avatar} ${color}`} src={url} alt="profile" />
             <div className={styles.info}>
                 <h1 className={styles.name}>{name}</h1>
-                <p className={styles.company}>{company}</p>
+                {company && <p className={styles.company}>{company}</p>}
                 <p className={styles.phone}>{phone}</p>
                 <p className={styles.email}>{email}</p>
                 <p className={styles.message}>{message}</p>

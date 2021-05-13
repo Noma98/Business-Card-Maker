@@ -4,7 +4,7 @@
     position:relative;
     left:50%;
     transform: translateX(-50%);
-    margin-bottom: 1em;
+    margin: 1em 0;
     max-width:29rem;
     width: 98%;
     height: 2rem;

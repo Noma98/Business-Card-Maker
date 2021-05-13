@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from '../button/button';
 import ImgBox from '../img_box/img_box';
 import styles from './card_edit_form.module.css';
 
@@ -17,7 +16,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
             [event.target.name]: event.target.value,
         });
     };
-    const onsubmit = () => {
+    const onDelete = () => {
         deleteCard(card);
     };
     const onFileChange = file => {
@@ -115,7 +114,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                         <i className="fas fa-images"></i>
                     </button>
                 </div>
-                <Button name='Delete' onClick={onsubmit} />
+                <button className={styles.delete} onClick={onDelete}>Delete</button>
             </form >
             {avatar && <ImgBox onChangeAvatar={onChangeAvatar} />}
         </>

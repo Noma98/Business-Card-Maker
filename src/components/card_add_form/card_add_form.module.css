@@ -1,40 +1,19 @@
 @value makerWhite, makerBlack, makerPaleGray,makerLightGray from '../../common/colors.css';
 
-.form{
+.addForm{
     max-width: 30rem;
-    margin: 1em auto;
+    margin: auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    flex-wrap: wrap;
-    border-top: 1px solid makerLightGray;
-    border-left: 1px solid makerLightGray;
-}
-.input,.textarea,.select,.button,.file{
-    font-size: 0.8rem;
-    width: 100%;
-    border:0;
-    padding:0.5em;
-    border-bottom: 1px solid makerLightGray;
-    border-right: 1px solid makerLightGray;
-    background:makerWhite;
-    outline: none;
-}
-.input,.select{
-    flex: 1 1 30%;
-}
-.file{
-    padding: 0;
-    display: flex;
-    flex: 1 1 50%;
-}
-.return,.gallery{
-    padding: 1em;
-    color: makerBlack;
+    height: 9.5rem;
     background-color: makerWhite;
+    cursor: pointer;
+    color: makerPaleGray;
+    font-size: 4rem;
+    border-radius: 2px;
 }
-.return:hover,.gallery:hover{
-    background-color: makerPaleGray;
-}
-.textarea{
-    flex-basis:100%;
+.addForm:hover{
+    opacity: 70%;
 }

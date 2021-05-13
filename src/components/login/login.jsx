@@ -20,7 +20,7 @@ const Login = ({ authService }) => {
             .then(data => goToMaker(data.user.uid));
     };
     const onLoginAnonymously = () => {
-        authService.loginAnonymously().then(alert('❗ WARNING \n\nNon-member login does not save the changed data, and it will be initialized when refreshed. So, we recommend logging in with Google or GitHub.'));
+        authService.loginAnonymously().then(alert("❗ WARNING \n\nNon-member login doesn't save the changed data. \nSo, We recommend you log in with Google or GitHub."));
     }
     useEffect(() => {
         authService.onAuthChange(user => {
