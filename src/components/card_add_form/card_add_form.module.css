@@ -13,7 +13,9 @@
     color: makerPaleGray;
     font-size: 4rem;
     border-radius: 2px;
+    opacity: 0.8;
 }
 .addForm:hover{
-    opacity: 70%;
+    opacity: 1;
+    background-color: white;
 }

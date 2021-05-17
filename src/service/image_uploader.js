@@ -1,6 +1,5 @@
 class ImageUploader {
     async upload(file) {
-        const url = "https://api.cloudinary.com/v1_1/dzc3xm7vg/upload";
         const data = new FormData();
         data.append("file", file);
         data.append("upload_preset", "admlhazy");
