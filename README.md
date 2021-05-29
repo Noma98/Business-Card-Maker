@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/badge/Open%20Source-%F0%9F%A7%A1-brightgreen">
 </p>
 <img width="100%" alt="thumbnail" src="https://user-images.githubusercontent.com/69305320/118351680-3263f480-b598-11eb-8185-562466727427.png">  
-<h2 align="center"><a href="https://609808f28f4b5ac40672e301--merry-business-card-maker.netlify.app"><b>Live Demo</b></a></h2>
+<h2 align="center"><a href="https://merry-business-card-maker.netlify.app/"><b>Live Demo</b></a></h2>
 
 # **📝 Description**
 이번 프로젝트는 Firebase와 Cloudinary를 이용하여 백엔드와 통신하며 동적으로 작동하는 명함 제작 웹 어플리케이션입니다.
