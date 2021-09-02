@@ -5,10 +5,19 @@
 <img src="https://img.shields.io/badge/Open%20Source-%F0%9F%A7%A1-brightgreen">
 </p>
 <img width="100%" alt="thumbnail" src="https://user-images.githubusercontent.com/69305320/118351680-3263f480-b598-11eb-8185-562466727427.png">  
-<h2 align="center"><a href="https://merry-business-card-maker.netlify.app/"><b>Live Demo</b></a></h2>
+
+<h2 align="center"><a href="https://merry-business-card-maker.netlify.app/"><b> Live Demo (Click Here!🌟) </b></a></h2>    
 
 # **📝 Description**
-이번 프로젝트는 Firebase와 Cloudinary를 이용하여 백엔드와 통신하며 동적으로 작동하는 명함 제작 웹 어플리케이션입니다.
+Noma 프로젝트는 Firebase와 React를 사용하여 만든 명함 제작 웹 어플리케이션입니다. Firebase로 소셜 로그인을 구현하였고 여기서 얻어온 UUID로 사용자를 구분하여 Realtime Database에 명함을 CRUD 할 수 있도록 만들었습니다. 또한 Cloudinary를 통해 사용자가 원하는 이미지를 서버에 업로드하여 언제 어디서든 이미지를 볼 수 있도록 만들었고, 딱히 쓸 이미지가 없는 사용자를 위해 간단하게 선택해서 쓸 수 있는 아바타 박스 기능을 제공합니다. 
+
+### **💻 Development Environment** 
+1. Skills: React, React Router, PostCSS
+2. Use: Firebase, Cloudinary
+3. Deploy: Netlify
+4. Period
+    - 3/19 ~ 4/4 1차 배포
+    - 5/8 ~ 5/13 (게스트 로그인 기능, 카드 검색 기능, 이미지 박스 기능 추가, UI 업데이트, 버그 수정)
 
 ## **How to use ❓**
 ### **1. 먼저 소셜 계정 또는 비회원으로 로그인 하세요!**
@@ -44,9 +53,6 @@
 ![search](https://user-images.githubusercontent.com/69305320/118350841-c54e6000-b593-11eb-8e95-35c6d280d160.gif)
   
 # **🔍 About the project**
-
-### **💻 Development Environment** 
-: React.js, React Router, Firebase, Cloudinary, PostCSS, VScode, Github
 
 > ❗ 아래 코드들은 설명을 위해 필요한 부분만 일부 가져온 것으로, 관련 없는 부분은 `//...`으로 생략하겠습니다.
 
